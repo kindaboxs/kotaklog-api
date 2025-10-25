@@ -8,6 +8,7 @@ import { serve } from '@hono/node-server';
  */
 import app from '@/app';
 import { env } from '@/configs/env';
+import { logger } from '@/middlewares/logger';
 
 const port = env.PORT;
 
@@ -17,7 +18,6 @@ serve(
     port,
   },
   info => {
-    // eslint-disable-next-line no-undef
-    console.log(`Server is running on http://localhost:${info.port}`);
+    logger.info(`Server is running on http://localhost:${info.port}`);
   }
 );
