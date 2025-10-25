@@ -1,9 +1,9 @@
 export interface ApiError {
-  success: boolean;
+  success: false;
   error: {
     code: number;
     message: string;
-    details?: string[] | object;
+    details?: string[] | Record<string, unknown>;
     stack?: string;
   };
 }
