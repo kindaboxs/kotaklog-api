@@ -1,18 +1,23 @@
+/**
+ * Node modules
+ */
 import { serve } from '@hono/node-server';
-import { Hono } from 'hono';
 
-const app = new Hono();
+/**
+ * Custom modules
+ */
+import app from '@/app';
+import { env } from '@/configs/env';
 
-app.get('/', c => {
-  return c.text('Hello Hono!');
-});
+const port = env.PORT;
 
 serve(
   {
     fetch: app.fetch,
-    port: 3000,
+    port,
   },
   info => {
+    // eslint-disable-next-line no-undef
     console.log(`Server is running on http://localhost:${info.port}`);
   }
 );
