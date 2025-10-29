@@ -1,0 +1,27 @@
+{
+  "name": "kotaklog-api",
+  "type": "module",
+  "scripts": {
+    "build": "tsdown",
+    "check-types": "tsc -b",
+    "compile": "bun build --compile --minify --sourcemap --bytecode ./src/index.ts --outfile kotaklog-api",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.5",
+    "hono": "^4.10.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "@types/node": "^20.11.17",
+    "eslint": "^9.38.0",
+    "prettier": "^3.6.2",
+    "tsdown": "^0.15.11",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.46.2"
+  }
+}
