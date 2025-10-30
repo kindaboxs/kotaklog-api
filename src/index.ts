@@ -9,6 +9,11 @@ import { serve } from '@hono/node-server';
 import app from '@/app';
 import { env } from '@/configs/env';
 
+/**
+ * Middlewares
+ */
+import { logger } from '@/middlewares/logger';
+
 const port = env.PORT;
 
 serve(
@@ -17,6 +22,6 @@ serve(
     port,
   },
   info => {
-    console.log(`Server is running on http://localhost:${info.port}`);
+    logger.info(`Server is running on http://localhost:${info.port}`);
   }
 );
